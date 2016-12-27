@@ -9,7 +9,14 @@ public abstract class Piece {
 	return y;
     }
 
-    public abstract void move(int nx, int ny);
-    public abstract int[][] getMoves();
+    public int getSide() {
+	return side;
+    }
+
+    public void move(int nx, int ny) {
+	x = nx;
+	y = ny;
+    }
+    public abstract int[][] getMoves(Board board);
    
 }

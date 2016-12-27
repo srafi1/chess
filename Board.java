@@ -6,6 +6,10 @@ public class Board {
     }
 
     public void start() {
+	for (int i = 0; i < 8; i++) 
+	    for (int j = 0; j < 8; j++)
+		board[i][j] = null;
+	
 	for (int i = 0; i < 2; i++) {
 	    board[i*7][0] = new Rook(i*7, 0, i);
 	    board[i*7][1] = new Knight(i*7, 1, i);
@@ -31,8 +35,9 @@ public class Board {
 	return board[y][x];
     }
 
-    public void set(int px, int py, int nx, int ny) {
+    public void move(int px, int py, int nx, int ny) {
 	board[ny][nx] = board[py][px];
+	board[py][px] = null;
     }
     
 }
